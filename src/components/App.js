@@ -1,11 +1,22 @@
 
-import { React, Component } from 'react';
+import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchImages } from './services/fetchImages';
 
 import { Searchbar } from './Searchbar/Searchbar';
 
 export class App extends Component {
+  state = {
+    text: '',
+    page: 1,
+    images: [],
+    largeImageData: {},
+    loading: false,
+    isModalOpen: false,
+    isError: false,
+  };
+
   render() {
     return (
       <>
@@ -17,19 +28,6 @@ export class App extends Component {
       </>
     );
   }
-  
 };
 
 
-// {/* <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101',
-//       }}
-//     >
-//       React homework template
-//     </div> */}
