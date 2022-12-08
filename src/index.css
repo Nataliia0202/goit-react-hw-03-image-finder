@@ -13,3 +13,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  opacity: 0;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--clearlyWhite);
+  border-radius: 8px;
+  border: 6px solid var(--kindaBlue);
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding-bottom: 24px;
+}
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,7 +1,4 @@
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  min-height: 100vh;
+.Loader {
+  display: block;
+  margin: 0 auto;
 }
