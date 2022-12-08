@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { fetchImages } from './services/fetchImages';
-import { Vortex } from 'react-loader-spinner';
+// import { Vortex } from 'react-loader-spinner';
+import {Louder} from './Louder/Louder'
 
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -156,15 +157,7 @@ export class App extends Component {
           )
         )}
         {loading === true ? (
-          <Vortex 
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="vortex-loading"
-            wrapperStyle={{}}
-            wrapperClass="vortex-wrapper"
-            colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
-          />
+          <Louder />
         ) : (
           images.length > 0 && (
             <Button
