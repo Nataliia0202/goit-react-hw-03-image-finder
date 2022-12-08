@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { fetchImages } from './services/fetchImages';
-import { MagnifyingGlass } from 'react-loader-spinner';
+import { Vortex } from 'react-loader-spinner';
 
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
@@ -156,15 +156,14 @@ export class App extends Component {
           )
         )}
         {loading === true ? (
-          <MagnifyingGlass
+          <Vortex 
             visible={true}
             height="80"
             width="80"
-            ariaLabel="MagnifyingGlass-loading"
+            ariaLabel="vortex-loading"
             wrapperStyle={{}}
-            wrapperClass="MagnifyingGlass-wrapper"
-            glassColor="#c0efff"
-            color="#3f51b5"
+            wrapperClass="vortex-wrapper"
+            colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
           />
         ) : (
           images.length > 0 && (
