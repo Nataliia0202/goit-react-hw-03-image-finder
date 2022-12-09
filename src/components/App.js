@@ -23,6 +23,7 @@ export class App extends Component {
     loading: false,
     isModalOpen: false,
     isError: false,
+    isLoadMore: true,
   };
 
   async componentDidUpdate(prevProps, prevState) {
@@ -48,6 +49,9 @@ export class App extends Component {
             loading: false,
             isError: true,
           });
+        }
+        if (totalHits.length < 12) {
+          this.setState({ isloadMore: false });
         }
         if (page === 1 && hits.length > 1) {
           this.toastSuccess();
@@ -141,8 +145,14 @@ export class App extends Component {
     );
   };
   render() {
-    const { images, largeImageData, loading, isModalOpen, isError } =
-      this.state;
+    const {
+      images,
+      largeImageData,
+      loading,
+      isModalOpen,
+      isError,
+      
+    } = this.state;
     return (
       <>
         <Searchbar
@@ -159,7 +169,7 @@ export class App extends Component {
         {loading === true ? (
           <Louder />
         ) : (
-          images.length > 0 && (
+          images.length >= 12 && (
             <Button
               text="Load more"
               type="button"
@@ -167,6 +177,7 @@ export class App extends Component {
             />
           )
         )}
+       
         {isModalOpen && (
           <Modal data={largeImageData} onToggleModal={this.toggleModal} />
         )}
